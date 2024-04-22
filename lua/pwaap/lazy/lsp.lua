@@ -22,19 +22,13 @@ return {
         vim.lsp.protocol.make_client_capabilities(),
         cmp_lsp.default_capabilities())
 
-        require("fidget").setup({
-            -- integration = {
-            --     ["nvim-treesitter"] = {
-            --         enable = true,              -- Integrate with nvim-tree/nvim-tree.lua (if installed)
-            --     },
-            -- },
-        })
+        require("fidget").setup()
         require("mason").setup()
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
-                -- "rust_analyzer",
-                -- "gopls",
+                "jsonls",
+                "yamlls",
                 "tsserver"
             },
             handlers = {
@@ -70,12 +64,12 @@ return {
         end
 
         local kind_icons = {
-            Text = "",
+            Text = "",
             Method = "m",
-            Function = "",
+            Function = "󰊕",
             Constructor = "",
             Field = "",
-            Variable = "",
+            Variable = "󰫧",
             Class = "",
             Interface = "",
             Module = "",
@@ -83,18 +77,18 @@ return {
             Unit = "",
             Value = "",
             Enum = "",
-            Keyword = "",
+            Keyword = "",
             Snippet = "",
             Color = "",
-            File = "",
+            File = "",
             Reference = "",
-            Folder = "",
+            Folder = "󰉋",
             EnumMember = "",
-            Constant = "",
+            Constant = "",
             Struct = "",
             Event = "",
-            Operator = "",
-            TypeParameter = "",
+            Operator = "󱓉",
+            TypeParameter = "󰊄",
         }
 
         cmp.setup({
