@@ -1,7 +1,7 @@
 return {
     {
         "folke/tokyonight.nvim",
-        name = tokyonight,
+        name = "tokyonight",
         config = function()
             require("tokyonight").setup({
                 -- your configuration comes here
@@ -21,8 +21,17 @@ return {
                   dim_inactive = false, -- dims inactive windows
             })
 
-            vim.cmd[[colorscheme tokyonight]]
+            -- vim.cmd[[colorscheme tokyonight]]
 
+        end
+    },
+    {
+        "catppuccin/nvim",
+        lazy = false,
+        name = "catppuccin",
+        priority = 1000,
+        config = function()
+            vim.cmd.colorscheme "catppuccin-macchiato"
         end
     }
 }
